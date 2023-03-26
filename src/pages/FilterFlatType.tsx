@@ -19,7 +19,7 @@ const FilterFlatType = (props: PageProps) => {
 
     flats.filter((item) => item.flat_type === flatType).forEach((item) => {
       const town = item.town;
-      const price = item.resale_price;
+      const price = +item.resale_price;
       const count = flatTypeCountByTown[town] || 0;      
       flatTypePriceByTown[town].plus(price);
       flatTypeCountByTown[town] = count + 1;
